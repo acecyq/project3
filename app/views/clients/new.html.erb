@@ -1,6 +1,5 @@
-<%= form_for @client, :local => true do |form| %>
-    <%= form.text_field :name, placeholder: 'Name' %><br />
-    <%= form.text_field :email, placeholder: 'email' %><br />
-     <%= form.text_field :number, placeholder: 'number' %><br />
+<h1> New client</h1></
+<%=form_for @client, :local => true do |form| %>
+     <%= form.text_field :number, placeholder: 'number' %><br /><br/>
     <%= form.submit 'Create' %>
 <% end %>
