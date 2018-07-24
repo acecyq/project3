@@ -1,8 +1,6 @@
 class CreateLawyers < ActiveRecord::Migration[5.2]
   def change
     create_table :lawyers do |t|
-      t.string :name
-      t.string :email
       t.string :number
       t.string :specialization
       t.text :description
