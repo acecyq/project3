@@ -1,3 +1,4 @@
 class Client < ApplicationRecord
-    has_many :case
+
+	has_many :case
 end
