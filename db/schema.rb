@@ -19,10 +19,8 @@ ActiveRecord::Schema.define(version: 2018_07_24_072436) do
     t.string "title"
     t.string "specialization"
     t.text "description"
-    t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_cases_on_client_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -46,5 +44,4 @@ ActiveRecord::Schema.define(version: 2018_07_24_072436) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "cases", "clients"
 end
