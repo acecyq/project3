@@ -1,0 +1,20 @@
+<h1>LawMe</h1>
+<p><%= @client.number %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+  <% if @cases == nil%>
+      <tr>
+      <td> no record </td>
+    </tr>
+  <% else %>
+    <% @cases.each do |case| %>
+    <tr>
+      <td><%= case.name %></td>
+    </tr>
+    <% end %>
+  <% end %>  
+</table>
