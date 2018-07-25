@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
 
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
 
     def index
         # @heros = Hero.all
@@ -24,6 +24,7 @@ class ClientsController < ApplicationController
       def create
       # this posts clients/new.html.erb client form to the database and redirect to that client's page
         @client = Client.new(client_params)
+        @client.user_id = current_user.id
         @client.save
         redirect_to clients_path
         
