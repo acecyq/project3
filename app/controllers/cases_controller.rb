@@ -1,6 +1,19 @@
 class CasesController < ApplicationController
 
+before_action :authenticate_user!
 before_action :find_case, only: [:edit, :update, :delete]
+
+    def index
+        @client = Client.find_by user_id: current_user.id
+        @lawyer = Lawyer.find_by user_id: current_user.id
+        if @client == nil && @lawyer == nil
+            render "selection"
+        elsif @client == nil
+            redirect_to lawyer_path(@lawyer)
+        else @lawyer == nil
+            redirect_to client_path(@client)
+        end
+    end
 
     def create
         @case = Case.new(case_params)
