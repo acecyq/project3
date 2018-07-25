@@ -6,8 +6,8 @@
 
 	<!-- number will change to lawyer name -->
 	<%= image_tag "#{l.photo}", width: "200vw", height: "200vh" %>
-	<h1><%= l.number %></h1>
-	<h3><%= "Specialization: #{l.specialization}" %></h3>
+	<h1><%= l.name %></h1>
+	<h3><%= "Specialization: #{l.specializations[0]}" %></h3>
 
 	<!-- checks if there is any case for display -->
 	<% if @case == [] %>

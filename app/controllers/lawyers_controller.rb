@@ -18,7 +18,7 @@ class LawyersController < ApplicationController
 
 
   def show
-    @case = Case.where(specialization: @lawyer.specialization)
+    @case = Case.where(specialization: @lawyer.specializations[0])
   end
 
   def edit
