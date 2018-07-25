@@ -1,5 +1,7 @@
 <h1> Client Update</h1>
 <%= form_for @client, :local => true do |form| %>
-     <%= form.text_field :number, placeholder: 'number' %><br /> <br/>
-    <%= form.submit 'Create' %>
+    <p>
+    <%= form.text_field :number, placeholder: 'number' %><br /> <br/>
+    <%= form.submit 'Update' %>
+    </p>
 <% end %>

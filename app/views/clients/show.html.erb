@@ -2,19 +2,18 @@
 <p><%= @client.number %></p>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Cases</th>
   </tr>
-
-  <% if @cases == nil%>
+ <% if @cases == []%>
       <tr>
       <td> no record </td>
     </tr>
   <% else %>
-    <% @cases.each do |case| %>
+    <% @cases.each do |cases| %>
     <tr>
-      <td><%= case.name %></td>
+      <td><%= cases.title %></td>
     </tr>
     <% end %>
-  <% end %>  
+  <% end %> 
+  
 </table>
