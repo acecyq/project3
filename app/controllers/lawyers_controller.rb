@@ -1,53 +1,41 @@
 class LawyersController < ApplicationController
 
+  # find lawyer by params[:id] for show, edit, update and destroy actions
   before_action :find_lawyer, only: [:show, :edit, :update, :destroy]
 
-  require 'date'
-
+  # new lawyer form
   def new
     @lawyer = Lawyer.new
   end
 
-  def index
-    @yr = Date.today.year
-    if params.has_key?(:user_id)
-      @player = User.find(params[:user_id]).players
-    else
-      @player = Player.all
-    end
-  end
-  
+  # creates new lawyer and shows the new lawyer
   def create
-    @player = Player.new(player_params)
-    @player.save
-    redirect_to @player
+    @lawyer = Lawyer.new(lawyer_params)
+    @lawyer.save
+    redirect_to @lawyer
   end
 
+
   def show
-    @yr = Date.today.year
+    @case = Case.where(specialization: @lawyer.specialization)
   end
 
   def edit
   end
 
   def update
-    @player.update(player_params)
-    redirect_to @player
-  end
-
-  def destroy
-    @player.destroy
-    redirect_to players_path
+    @lawyer.update(lawyer_params)
+    redirect_to @lawyer
   end
 
 private
 
-  def player_params
-    params.require(:player).permit(:name, :img, :team, :team_img, :b_year, :ppg, :rpg, :apg, :bpg, :user_ids => [])
+  def lawyer_params
+    params.require(:lawyer).permit(:number, :specialization, :description, :photo, :firm, :address)
   end
 
-  def find_player
-    @player = Player.find(params[:id])
+  def find_lawyer
+    @lawyer = Lawyer.find(params[:id])
   end
 
 end

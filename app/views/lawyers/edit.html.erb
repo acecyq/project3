@@ -1,8 +1,6 @@
 <div class="container">
-	
-	<h1>LAWME</h1>
 
-	<h3>Register New Lawyer</h3>
+	<h3>Update Lawyer</h3>
 
 	<%= form_for @lawyer, :local => true do |f| %>
 	    
@@ -41,7 +39,7 @@
 		</div>
 
 		<div class="form-group">
-			<%= f.submit 'Register', :type => "submit", class: "btn btn-danger" %>
+			<%= f.submit 'Update', :type => "submit", class: "btn btn-danger" %>
 		</div>
 		
 	<% end %>
