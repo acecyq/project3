@@ -1,0 +1,42 @@
+<div class="container">
+
+	<h1>LAWME</h1>
+
+	<% l = @lawyer %>
+
+	<!-- number will change to lawyer name -->
+	<%= image_tag "#{l.photo}", width: "200vw", height: "200vh" %>
+	<h1><%= l.number %></h1>
+	<h3><%= "Specialization: #{l.specialization}" %></h3>
+
+	<!-- checks if there is any case for display -->
+	<% if @case == [] %>
+
+		<p>There is no case that interests you at the moment</p>
+
+	<% else %>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>S/No.</th>
+					<th>Title</th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+
+						<!-- display each case with an index -->
+						<% @case.each_with_index do |c, i| %>
+							<td><%= i + 1 %></td>
+
+							<!-- this will turn into a link to the case -->
+							<td><%= c.title %></td>
+						<% end %>
+					</tr>
+			</tbody>
+		</table>
+
+	<% end %>
+
+</div>
