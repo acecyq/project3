@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_063916) do
   end
 
   create_table "clients", force: :cascade do |t|
+    t.string "name"
     t.string "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_063916) do
   end
 
   create_table "lawyers", force: :cascade do |t|
+    t.string "name"
     t.string "number"
     t.string "specialization"
     t.text "description"
