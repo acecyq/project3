@@ -15,11 +15,9 @@ before_action :find_case, only: [:edit, :update, :delete]
     end
 
     def edit
-        @case = Case.find(params[:id])
     end
 
     def update
-        @case = Case.find(params[:id])
         @case.update(case_params)
         redirect_to '/'        
     end
