@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :lawyers
 
   root to: "clients#new"
+
+  get '/lawyers/:id/dashboard', to: 'lawyers#dashboard', as: 'dashboard_lawyer'
+
 end

@@ -22,7 +22,7 @@ Lawyer.create(name: "Law1", number: "12345678", description: "Lawyer number 1", 
 Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "https://showtimelive.co.uk/wp-content/uploads/2018/05/Sean-Paul-High-Definition-Wallpapers-.jpg", firm: "LawOne Pte Ltd", address: "2 Claymore Hill", user_id: 2)
 Client.create(name: "Client1", number: "97487234", user_id: 3)
 Client.create(name: "Client2", number: "92328737", user_id: 4)
-Case.create(title: "Case1", specialization: "Accident", description: "Accident 1", client_id: 1)
+Case.create(title: "Case1", specialization: "Accidents", description: "Accident 1", client_id: 1)
 Case.create(title: "Case2", specialization: "Arbitration", description: "Arbitration 1", client_id: 2)
 
 specializations = [
