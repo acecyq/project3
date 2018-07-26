@@ -6,6 +6,7 @@ class LawyersController < ApplicationController
   # new lawyer form
   def new
     @lawyer = Lawyer.new
+    @specialization = Specialization.all
   end
 
   # creates new lawyer and shows the new lawyer

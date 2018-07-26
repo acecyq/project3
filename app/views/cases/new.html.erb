@@ -10,8 +10,8 @@
 	<div class="form-group">
 		<%= f.label(:specialization, "Specialization") %>
 			<%= f.select(:specialization) do %>
-				<% [['Accident', 'Accident'], ['Arbitration', 'Arbitration'], ['Banking and Finance', 'Banking and Finance'], ['Bribery and Anti-Corruption', 'Bribery and Anti-Corruption'], ['Business Crime and Fraud', 'Business Crime and Fraud']].each do |s| -%>
-				<%= content_tag(:option, s.first, value: s.last) %>
+				<% @specialization.each do |s| -%>
+				<%= content_tag(:option, s.last, value: s.last) %>
 			<% end %>
 		<% end %>
 	</div>
