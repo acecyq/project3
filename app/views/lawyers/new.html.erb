@@ -5,6 +5,21 @@
 	<h3>Register New Lawyer</h3>
 
 	<%= form_for @lawyer, :local => true do |f| %>
+
+		<div class="form-group">
+			<%= f.label(:photo, "Photograph") %>
+			<%= f.text_field :photo, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label(:name, "Name") %>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label(:specialization_ids, "Specialization") %>
+			<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name, class: "form-check-input" %>
+		</div>
 	    
 	    <div class="form-group">
 			<%= f.label(:number, "Contact Number") %>
@@ -12,24 +27,11 @@
 		</div>
 
 		<div class="form-group">
-			<%= f.label(:specialization, "Specialization") %>
-			<%= f.select(:specialization) do %>
-			  <% [['Accident', 'Accident'], ['Arbitration', 'Arbitration'], ['Banking and Finance', 'Banking and Finance'], ['Bribery and Anti-Corruption', 'Bribery and Anti-Corruption'], ['Business Crime and Fraud', 'Business Crime and Fraud']].each do |s| -%>
-			    <%= content_tag(:option, s.first, value: s.last) %>
-			  <% end %>
-			<% end %>
-		</div>
-
-		<div class="form-group">
 			<%= f.label(:description, "Description") %>
 			<%= f.text_area :description, class: "form-control" %>
 		</div>
 
-		<div class="form-group">
-			<%= f.label(:photo, "Photograph") %>
-			<%= f.text_field :photo, class: "form-control" %>
-		</div>
-
+		
 		<div class="form-group">
 			<%= f.label(:firm, "Law Firm") %>
 			<%= f.text_field :firm, class: "form-control" %>
