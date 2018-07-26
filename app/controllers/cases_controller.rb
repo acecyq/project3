@@ -8,10 +8,13 @@ before_action :find_case, only: [ :update, :destroy, :show]
         @lawyer = Lawyer.find_by user_id: current_user.id
         if @client == nil && @lawyer == nil
             render "selection"
+            user_session[:user] = "botak" 
         elsif @client == nil
             redirect_to dashboard_lawyer_path(@lawyer)
+            user_session[:user] = "lawyer" 
         else @lawyer == nil
             redirect_to client_path(@client)
+            user_session[:user] = "client"
         end
     end
 

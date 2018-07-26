@@ -10,9 +10,44 @@
         <%= link_to "LawMe", root_path %>
       </div>
     </div>
-    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <% if user_session.nil?  %>
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "Login", new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to "Register", new_user_registration_path %>
+          </li>
+      </ul>
+    </div>
+    <% elsif user_session["user"] == "lawyer"  %>
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to "Profile", dashboard_lawyer_path(@lawyer) %>
+            </li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Login", new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to "Register", new_user_registration_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% elsif user_session["user"] == "client" %>
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li>
+            <%= link_to "Profile", client_path(@client) %>
+          </li>
           <li>
             <%= link_to "New Case", new_client_case_path(@client) %>
           </li>
@@ -29,5 +64,6 @@
         <% end %>
       </ul>
     </div>
+    <%end%>
   </div>
 </nav>

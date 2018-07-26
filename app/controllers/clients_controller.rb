@@ -12,7 +12,6 @@ class ClientsController < ApplicationController
     #so find cases by client_id(from cases table foreign key) while client is an activerecord object 
       @cases = Case.where(client_id: @client.id)
     # Also need to display current user name or email (once devise implemented)
-     
       @user = User.find(current_user.id)
         
     # Also buttons leading to cases#edit and  cases#destroy should be in the show
