@@ -1,7 +1,7 @@
 class CasesController < ApplicationController
 
 before_action :authenticate_user!
-before_action :find_case, only: [:edit, :update, :delete]
+before_action :find_case, only: [:edit, :update, :delete, :show]
 
     def index
         @client = Client.find_by user_id: current_user.id
@@ -9,7 +9,7 @@ before_action :find_case, only: [:edit, :update, :delete]
         if @client == nil && @lawyer == nil
             render "selection"
         elsif @client == nil
-            redirect_to lawyer_path(@lawyer)
+            redirect_to dashboard_lawyer_path(@lawyer)
         else @lawyer == nil
             redirect_to client_path(@client)
         end
@@ -37,13 +37,13 @@ before_action :find_case, only: [:edit, :update, :delete]
 
     def destroy
         @case.destroy
-
         redirect_to '/'
     end
 
     def show
+        @client = Client.find(@case.client_id)
         # should show case by id layout - case details followed by client details
-
+        
     end
 
 private
@@ -55,5 +55,4 @@ private
     def find_case
         @case = Case.find(params[:id])
     end
-
 end

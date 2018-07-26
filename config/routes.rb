@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :cases
   resources :lawyers
 
- 
   root to: "cases#index"
+
+  get '/lawyers/:id/dashboard', to: 'lawyers#dashboard', as: 'dashboard_lawyer'
+
 end
