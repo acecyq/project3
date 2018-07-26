@@ -1,6 +1,6 @@
 class LawyersController < ApplicationController
 
-  # find lawyer by params[:id] for show, edit, update and destroy actions
+  before_action :authenticate_user!
   before_action :find_lawyer, only: [:show, :edit, :update, :destroy]
 
   # new lawyer form
@@ -11,13 +11,14 @@ class LawyersController < ApplicationController
   # creates new lawyer and shows the new lawyer
   def create
     @lawyer = Lawyer.new(lawyer_params)
+    @lawyer.user_id = current_user.id
     @lawyer.save
     redirect_to @lawyer
   end
 
 
   def show
-    @case = Case.where(specialization: @lawyer.specialization)
+    @case = Case.where(specialization: @lawyer.specializations[0])
   end
 
   def edit
@@ -31,7 +32,7 @@ class LawyersController < ApplicationController
 private
 
   def lawyer_params
-    params.require(:lawyer).permit(:number, :specialization, :description, :photo, :firm, :address)
+    params.require(:lawyer).permit(:number, :specialization, :description, :photo, :firm, :address, :user_id)
   end
 
   def find_lawyer

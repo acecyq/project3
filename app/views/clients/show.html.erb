@@ -1,19 +1,24 @@
-<h1>LawMe</h1>
-<p><%= @client.number %></p>
-<table>
-  <tr>
-    <th>Cases</th>
-  </tr>
- <% if @cases == []%>
-      <tr>
-      <td> no record </td>
-    </tr>
-  <% else %>
-    <% @cases.each do |cases| %>
-    <tr>
-      <td><%= cases.title %></td>
-    </tr>
-    <% end %>
-  <% end %> 
+<div class="container">
+  <h1>LawMe</h1>
   
-</table>
+  <p><%= @user.email %></p>
+  <p><%= @client.name %></p>
+  <p><%= @client.number %></p>
+  
+  <table>
+    <tr>
+      <th>Cases</th>
+    </tr>
+    <% if @cases == []%>
+      <tr>
+        <td> no record </td>
+      </tr>
+    <% else %>
+      <% @cases.each do |cases| %>
+      <tr>
+        <td><%= cases.title %></td>
+      </tr>
+      <% end %>
+    <% end %>  
+  </table>
+</div>

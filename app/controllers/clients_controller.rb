@@ -1,42 +1,45 @@
 class ClientsController < ApplicationController
 
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
+    before_action :find_client, only: [:show, :edit, :update, :destroy]
 
     def index
-        # @heros = Hero.all
+        # @client = Client.all
       end
     
-      def show
+    def show
     #Show all instances of cases created by the client
     #so find cases by client_id(from cases table foreign key) while client is an activerecord object 
-        @client = Client.find(params[:id])
-        @cases = Case.where(client_id: @client.id)
+      @cases = Case.where(client_id: @client.id)
     # Also need to display current user name or email (once devise implemented)
-        # @user = User.find(current_user.id)
+     
+      @user = User.find(current_user.id)
+        
     # Also buttons leading to cases#edit and  cases#destroy should be in the show
       end
     
       def new
       # renders new.html.erb client form with new empty instance of client model
-        @client = Client.new
+      @user = User.find(current_user.id)  
+      @client = Client.new
       end
     
       def create
       # this posts clients/new.html.erb client form to the database and redirect to that client's page
         @client = Client.new(client_params)
+        @client.user_id = current_user.id
         @client.save
-        redirect_to clients_path
+        redirect_to client_path
         
       end
     
       def edit
+      @user = User.find(current_user.id)
       # this renders clients/edit.html.erb client from with previous client data already filled up
-        @client = Client.find(params[:id])
       end
     
       def update
       # this patches clients/edit.html.erb client from to the database and redirect to that client's page 
-        @client = Client.find(params[:id])
         @client.update(client_params)
         redirect_to client_path
       end
@@ -45,7 +48,11 @@ class ClientsController < ApplicationController
       private
     
       def client_params
-        params.require(:client).permit(:number)
+        params.require(:client).permit(:name, :number)
+      end
+
+      def find_client
+        @client = Client.find(params[:id])
       end
 
 end
