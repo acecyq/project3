@@ -12,11 +12,10 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
     <%= yield %>
-    <% if user_signed_in? %>
-      <%= link_to 'log out', destroy_user_session_url, method: :delete %>
-    <% end %>
   </body>
 </html>
