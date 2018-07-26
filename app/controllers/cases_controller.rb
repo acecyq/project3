@@ -16,6 +16,7 @@ before_action :find_case, only: [:edit, :update, :delete, :show]
     end
 
     def create
+        @specialization = Specialization.all
         @case = Case.new(case_params)
         # @client = Client.find(params[:client_id]).id
         # @case.client_id << @client
@@ -24,10 +25,12 @@ before_action :find_case, only: [:edit, :update, :delete, :show]
     end
 
     def new
+        @specialization = Specialization.all
         @case = Case.new
     end
 
     def edit
+        @specialization = Specialization.all
     end
 
     def update
