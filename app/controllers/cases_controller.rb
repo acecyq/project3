@@ -1,7 +1,7 @@
 class CasesController < ApplicationController
 
 before_action :authenticate_user!
-before_action :find_case, only: [:edit, :update, :delete, :show]
+before_action :find_case, only: [ :update, :delete, :show]
 
     def index
         @client = Client.find_by user_id: current_user.id
@@ -18,19 +18,27 @@ before_action :find_case, only: [:edit, :update, :delete, :show]
     def create
         @specialization = Specialization.all
         @case = Case.new(case_params)
-        # @client = Client.find(params[:client_id]).id
-        # @case.client_id << @client
+        @client = Client.find(params[:client_id])
+        @case.client_id = @client.id
         @case.save
         redirect_to '/'
     end
 
     def new
+
+        @client = Client.find(params[:client_id])
+
         @specialization = Specialization.all
+
         @case = Case.new
     end
 
     def edit
+
+        @case = Case.find(params[:client_id])
+
         @specialization = Specialization.all
+
     end
 
     def update

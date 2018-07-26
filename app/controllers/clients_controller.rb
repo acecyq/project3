@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
         @client = Client.new(client_params)
         @client.user_id = current_user.id
         @client.save
-        redirect_to client_path
+        redirect_to client_path(@client)
         
       end
     
