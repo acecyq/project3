@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :cases
   resources :lawyers
 
-  root to: "clients#new"
+ 
+  root to: "cases#index"
 end

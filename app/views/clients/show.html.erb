@@ -1,24 +1,39 @@
 <div class="container">
-  <h1>LawMe</h1>
-  
+
+	<h1>LawMe</h1>
   <p><%= @user.email %></p>
   <p><%= @client.name %></p>
   <p><%= @client.number %></p>
-  
-  <table>
-    <tr>
-      <th>Cases</th>
-    </tr>
-    <% if @cases == []%>
-      <tr>
-        <td> no record </td>
-      </tr>
-    <% else %>
-      <% @cases.each do |cases| %>
-      <tr>
-        <td><%= cases.title %></td>
-      </tr>
-      <% end %>
-    <% end %>  
-  </table>
+	<!-- checks if there is any case for display -->
+	<% if @cases == [] %>
+
+		<p>No records</p>
+
+	<% else %>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>S/No.</th>
+					<th>Title</th>
+          <th>Edit?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+
+					<!-- display each case with an index -->
+					<% @cases.each do |c| %>
+						<td><%= c.id %></td>
+
+						<!-- links to the case show -->
+						<td><%= link_to c.title, case_path(c) %></td>
+            <td><%= link_to "Edit", edit_case_path(c) %></td>
+					<% end %>
+				</tr>
+			</tbody>
+		</table>
+
+	<% end %>
+
 </div>
