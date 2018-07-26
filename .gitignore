@@ -27,3 +27,5 @@
 
 /Gemfile
 /.ruby-version
+.ruby-version
+Gemfile
