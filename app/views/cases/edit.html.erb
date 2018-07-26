@@ -13,7 +13,7 @@
 		<%= f.label(:specialization, "Specialization") %>
 			<%= f.select(:specialization) do %>
 				<% @specialization.each do |s| -%>
-				<%= content_tag(:option, s.last, value: s.last) %>
+				<%= content_tag(:option, s.name, value: s.name) %>
 			<% end %>
 		<% end %>
 	</div>
@@ -24,16 +24,13 @@
 	</div>
 
 	<div class="form-group">
-		<%= f.label(:client_id, "Your ID") %>
-		<%= f.text_field :client_id, class: "form-control" %>
-	</div>
-
-	<div class="form-group">
 			<%= f.submit 'Update', :type => "submit", class: "btn btn-danger" %>
 	</div>
 
     <div class="form-group">
-			<%= f.submit 'Delete', :type => "submit", class: "btn btn-danger" %>
+			<%= link_to 'Destroy', case_path(@case),
+			method: :delete,
+			data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 	</div>
 
 <% end %>

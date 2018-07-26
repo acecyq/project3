@@ -11,7 +11,7 @@
 		<%= f.label(:specialization, "Specialization") %>
 			<%= f.select(:specialization) do %>
 				<% @specialization.each do |s| -%>
-				<%= content_tag(:option, s.last, value: s.last) %>
+				<%= content_tag(:option, s.name, value: s.name) %>
 			<% end %>
 		<% end %>
 	</div>
