@@ -1,7 +1,7 @@
 class LawyersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :find_lawyer, only: [:show, :edit, :update, :destroy]
+  before_action :find_lawyer, only: [:show, :edit, :update, :destroy, :dashboard]
 
   # new lawyer form
   def new
@@ -16,12 +16,14 @@ class LawyersController < ApplicationController
     redirect_to @lawyer
   end
 
-
+  # shows lawyer profile
   def show
-    @case = Case.where(specialization: @lawyer.specializations[0])
+    @user = User.find(@lawyer.user_id)
   end
 
+  # edit lawyer profile
   def edit
+    @specialization = Specialization.all
   end
 
   def update
@@ -29,10 +31,22 @@ class LawyersController < ApplicationController
     redirect_to @lawyer
   end
 
+  def dashboard
+    @case = []
+    @array = Case.all
+    @array.each do |a|
+      @lawyer.specializations.each do |s|
+        if a.specialization == s.name
+          @case << a
+        end
+      end
+    end
+  end
+
 private
 
   def lawyer_params
-    params.require(:lawyer).permit(:number, :specialization, :description, :photo, :firm, :address, :user_id)
+    params.require(:lawyer).permit(:photo, :name, :number, :description, :firm, :address, :user_id, :specialization_ids => [])
   end
 
   def find_lawyer

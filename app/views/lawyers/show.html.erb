@@ -5,38 +5,17 @@
 	<% l = @lawyer %>
 
 	<!-- number will change to lawyer name -->
-	<%= image_tag "#{l.photo}", width: "200vw", height: "200vh" %>
-	<h1><%= l.name %></h1>
-	<h3><%= "Specialization: #{l.specializations[0]}" %></h3>
-
-	<!-- checks if there is any case for display -->
-	<% if @case == [] %>
-
-		<p>There is no case that interests you at the moment</p>
-
-	<% else %>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th>S/No.</th>
-					<th>Title</th>
-				</tr>
-			</thead>
-			<tbody>
-					<tr>
-
-						<!-- display each case with an index -->
-						<% @case.each_with_index do |c, i| %>
-							<td><%= i + 1 %></td>
-
-							<!-- this will turn into a link to the case -->
-							<td><%= c.title %></td>
-						<% end %>
-					</tr>
-			</tbody>
-		</table>
-
-	<% end %>
+	<%= image_tag "#{l.photo}", width: "auto", height: "200vh" %>
+	<h3><%= l.name %></h3>
+	<p><%= "Specializations: " %>
+		<% l.specializations.each do |s| %>
+		<%= "#{s.name} " %>
+		<% end %>
+	</p>
+	<p><%= "Contact No: #{l.number}" %></p>
+	<p><%= "Email: #{@user.email}" %></p>
+	<p><%= "About Me: #{l.description}" %></p>
+	<p><%= "Firm: #{l.firm}" %></p>
+	<p><%= "Address: #{l.address}" %></p>
 
 </div>
