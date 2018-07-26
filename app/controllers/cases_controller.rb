@@ -1,6 +1,6 @@
 class CasesController < ApplicationController
 
-before_action :find_case, only: [:edit, :update, :delete]
+before_action :find_case, only: [:edit, :update, :delete, :show]
 
     def create
         @case = Case.new(case_params)
@@ -24,13 +24,13 @@ before_action :find_case, only: [:edit, :update, :delete]
 
     def destroy
         @case.destroy
-
         redirect_to '/'
     end
 
     def show
+        @client = Client.find(@case.client_id)
         # should show case by id layout - case details followed by client details
-
+        
     end
 
 private
@@ -42,5 +42,4 @@ private
     def find_case
         @case = Case.find(params[:id])
     end
-
 end
