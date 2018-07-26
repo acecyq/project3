@@ -57,6 +57,9 @@ before_action :find_case, only: [ :update, :destroy, :show]
     def show
         @client = Client.find(@case.client_id)
         # should show case by id layout - case details followed by client details
+        if user_session["user"] == "lawyer"
+            @lawyer = Lawyer.find_by(user_id: current_user.id)
+        end
         
     end
 

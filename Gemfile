@@ -15,9 +15,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-gem 'bootstrap-sass', '~> 3.3.7'
+# gem 'bootstrap-sass', '~> 3.3.7'
 
-gem 'jquery-rails'
+# gem 'jquery-rails'
+
+gem "bulma-rails", "~> 0.7.1"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -32,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-gem 'bootstrap', '~> 4.1.0'
+# gem 'bootstrap', '~> 4.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
