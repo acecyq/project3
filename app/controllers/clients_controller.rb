@@ -43,7 +43,6 @@ class ClientsController < ApplicationController
         @client.update(client_params)
         redirect_to client_path
       end
-
     
       private
     
