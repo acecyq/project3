@@ -19,7 +19,7 @@ class LawyersController < ApplicationController
 
   # shows lawyer profile
   def show
-    @user = User.find(@lawyer.user_id)
+    @user = @lawyer.user
   end
 
   # edit lawyer profile

@@ -1,36 +1,62 @@
-<div class="container">
+<h1>LAWME</h1>
+	
+<% l = @lawyer %>
+<section class="section">
+  <div class="columns">
+  	<div class="column is-one-eighth">
+	</div>
+  	<div class="column is-two-fifths">
+	  <div class="card">
+		<div class="card-image">
+		  <figure class="image">
+		    <%= image_tag "#{l.photo}" %>
+		  </figure>
+		</div>
+		<div class="card-content">
+		  <div class="content">
+		    <%= "Name: #{l.name}" %>
+		    <br>
+		    <%= "Email: #{l.user.email}" %>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="column is-one-eighth">
+	</div>
+	
+	<div class="column is-two-fifths">
+	  <div class="card">
+	    <div class="card-content">
+	      <div class="content">	
+	        <% if @case == [] %>
+	          <p>There is no case that interests you at the moment</p>
+	        <% else %>
+		      <table class="table is-bordered">
+		        <thead>
+			      <tr>
+			        <th>S/No.</th>
+			        <th>Title</th>
+			      </tr>
+		        </thead>
+		        <tbody>
 
-	<h1>LAWME</h1>
+		          <!-- display each case with an index -->
+		          <% @case.each_with_index do |c, i| %>
+		            <tr>
+			          <td><%= i + 1 %></td>
 
-	<!-- checks if there is any case for display -->
-	<% if @case == [] %>
-
-		<p>There is no case that interests you at the moment</p>
-
-	<% else %>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th>S/No.</th>
-					<th>Title</th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<!-- display each case with an index -->
-				<% @case.each_with_index do |c, i| %>
-				<tr>
-				
-					<td><%= i + 1 %></td>
-
-					<!-- links to the case show -->
-					<td><%= link_to c.title, case_path(c) %></td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-
-	<% end %>
-
-</div>
+			          <!-- links to the case show -->
+			          <td><%= link_to c.title, case_path(c) %></td>
+			        </tr>
+		          <% end %>
+		        </tbody>
+		      </table>
+	        <% end %>
+	      </div>
+	    </div>
+	  </div>
+    </div>	
+    <div class="column is-one-eighth">
+    </div>
+  </div>
+</section>

@@ -3,49 +3,60 @@
 	<h1>LAWME</h1>
 
 	<h3>Register New Lawyer</h3>
+	
+	<div class="card">
+	  <div class="card-content">
+	    <div class="content">
+	      <%= form_for @lawyer, :local => true do |f| %>
+			<div class="field">
+				<%= f.label(:photo, "Photograph") %>
+				<div class="control">
+					<%= f.text_field :photo, class: "input", placeholder: "Photograph URL" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label(:name, "Name") %>
+				<div class="control">
+					<%= f.text_field :name, class: "input", placeholder: "Name" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label(:specialization_ids, "Specialization", class: "checkbox") %>
+				<div class="control">
+					<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name %>
+				</div>
+			</div>
+		    <div class="field">
+				<%= f.label(:number, "Contact Number") %>
+				<div class="control">
+					<%= f.text_field :number, class: "input", placeholder: "Contact Number" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label(:description, "Description") %>
+				<div class="control">
+					<%= f.text_area :description, class: "input", placeholder: "Describe Yourself" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label(:firm, "Law Firm") %>
+				<div class="control">
+					<%= f.text_field :firm, class: "input", placeholder: "Law Firm" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.label(:address, "Firm Address") %>
+				<div class="control">
+					<%= f.text_field :address, class: "input", placeholder: "Company Address" %>
+				</div>
+			</div>
+			<div class="field">
+				<%= f.submit 'Register', :type => "submit", class: "btn btn-danger" %>
+			</div>
+		<% end %>
+	    </div>
+	  </div>
+	</div>
 
-	<%= form_for @lawyer, :local => true do |f| %>
-
-		<div class="form-group">
-			<%= f.label(:photo, "Photograph") %>
-			<%= f.text_field :photo, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label(:name, "Name") %>
-			<%= f.text_field :name, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label(:specialization_ids, "Specialization") %>
-			<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name, class: "form-check-input" %>
-		</div>
-	    
-	    <div class="form-group">
-			<%= f.label(:number, "Contact Number") %>
-			<%= f.text_field :number, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label(:description, "Description") %>
-			<%= f.text_area :description, class: "form-control" %>
-		</div>
-
-		
-		<div class="form-group">
-			<%= f.label(:firm, "Law Firm") %>
-			<%= f.text_field :firm, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.label(:address, "Firm Address") %>
-			<%= f.text_field :address, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.submit 'Register', :type => "submit", class: "btn btn-danger" %>
-		</div>
-		
-	<% end %>
-
+	
 </div>
