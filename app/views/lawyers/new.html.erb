@@ -26,6 +26,20 @@
 					<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name %>
 				</div>
 			</div>
+
+
+
+			<div class="tags">
+			  <% specialization.each do |s| %>
+			  	<span class="tag">s.name</span>
+			  <% end %>
+			</div>
+
+
+
+
+
+
 		    <div class="field">
 				<%= f.label(:number, "Contact Number") %>
 				<div class="control">

@@ -84,7 +84,7 @@
            
             <div id="navbarMenu" class="navbar-menu">
               <div class="navbar-end">
-                <% if user_session == {}  %>                                       
+                <% if user_session == {} || user_session.nil? %>                                       
                   
                   <%= link_to "Login", new_user_session_path, {:class=>"navbar-item"}  %>
                   
