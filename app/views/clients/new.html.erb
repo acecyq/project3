@@ -1,33 +1,46 @@
 <section class="section">
 	<div class="container">
 		<div class="columns">
-		<div class=column></div>
-			<div class="column is-two-thirds">
-				<div class="card">
-					<div class="card-content">
-						<div class="content">
-							<%= form_for @client, :local => true do |f| %>
-						<div class="field">
-							<%= f.label(:name, "Name") %>
-							<div class="control">
-								<%= f.text_field :name, class: "input", placeholder: "Name" %>
+			<div class=column></div>
+				<div class="column is-two-thirds">
+					<div class="card">
+						<div class="card-content">
+							<div class="content">
+								  <section class="hero is-dark">
+                    <div class="hero-body">
+                      <div class="container">
+                        <div class="columns is-vcentered">
+                          <div class="column">
+														<h1 class="title is-size-2">Client Details</h1>
+														<h3 class="subtitle is-size-4">I need LawMe</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+									<br/>
+								<%= form_for @client, :local => true do |f| %>
+									<div class="field">
+										<%= f.label(:name, "Name") %>
+										<div class="control">
+											<%= f.text_field :name, class: "input", placeholder: "Name" %>
+										</div>
+									</div>
+										<div class="field">
+										<%= f.label(:number, "Contact Number") %>
+										<div class="control">
+											<%= f.text_field :number, class: "input", placeholder: "Contact Number" %>
+										</div>
+									</div>
+									<div class=class="actions is-centered is-focus-padded">
+										<%= f.submit 'Register', :type => "submit", class: "button is-warning" %>
+									</div>
+								<% end %>
 							</div>
-						</div>
-							<div class="field">
-							<%= f.label(:number, "Contact Number") %>
-							<div class="control">
-								<%= f.text_field :number, class: "input", placeholder: "Contact Number" %>
-							</div>
-						</div>
-						<div class="field">
-							<%= f.submit 'Register', :type => "submit", class: "btn btn-danger" %>
-						</div>
-					<% end %>
 						</div>
 					</div>
 				</div>
-			</div>
-		<div class=column></div>		
+			<div class=column></div>		
 		</div>	
 	</div>	
 </section>	
