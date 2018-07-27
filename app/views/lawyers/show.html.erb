@@ -1,21 +1,74 @@
-<div class="container">
-
-	<h1>LAWME</h1>
-
-	<% l = @lawyer %>
-
-	<!-- number will change to lawyer name -->
-	<%= image_tag "#{l.photo}", width: "auto", height: "200vh" %>
-	<h3><%= l.name %></h3>
-	<p><%= "Specializations: " %>
-		<% l.specializations.each do |s| %>
-		<%= "#{s.name} " %>
-		<% end %>
-	</p>
-	<p><%= "Contact No: #{l.number}" %></p>
-	<p><%= "Email: #{@user.email}" %></p>
-	<p><%= "About Me: #{l.description}" %></p>
-	<p><%= "Firm: #{l.firm}" %></p>
-	<p><%= "Address: #{l.address}" %></p>
-
-</div>
+<h1>LAWME</h1>
+	
+<% l = @lawyer %>
+<% ls = @lawyer.specializations %>
+<section class="section">
+  <div class="columns">
+  	<div class="column is-one-eighth">
+	</div>
+  	<div class="column is-two-fifths">
+	  <div class="card">
+		<div class="card-image">
+		  <figure class="image">
+		    <%= image_tag "#{l.photo}" %>
+		  </figure>
+		</div>
+	  </div>
+	</div>
+	<div class="column is-one-eighth">
+	</div>
+	
+	<div class="column is-two-fifths">
+	  <div class="card">
+	    <div class="card-content">
+	      <div class="content">	
+		    <table class="table is-bordered">
+		      <thead>
+		      </thead>
+		      <tbody>
+				<tr>
+				  <td>Name:</td>
+				  <td><%= l.name %></td>
+		        </tr>
+		        <tr>
+		          <td>Email:</td>
+		          <td><%= @user.email %></td>
+		        </tr>
+		        <tr>
+				  <td>Contact Number:</td>
+				  <td><%= l.number %></td>
+		        </tr>
+		        <tr>
+				  <td>About Me:</td>
+				  <td><%= l.description %></td>
+		        </tr>
+		        <tr>
+				  <td>Firm:</td>
+				  <td><%= l.firm %></td>
+		        </tr>
+		        <tr>
+				  <td>Address:</td>
+				  <td><%= l.address %></td>
+		        </tr>
+		        <tr>
+				  <td>Specialization:</td>
+				  <td>
+					<% if ls.length == 1 %>
+						<%= s.name %>
+					<% else %>
+					  	<% l.specializations.each do |s| %>
+					  	  <%= "#{s.name}.   " %>
+						<% end %>
+				  	<% end %>
+				  </td>
+		        </tr>
+		      </tbody>
+		    </table>
+	      </div>
+	    </div>
+	  </div>
+    </div>	
+    <div class="column is-one-eighth">
+    </div>
+  </div>
+</section>
