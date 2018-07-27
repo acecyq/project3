@@ -1,39 +1,59 @@
-<div class="container">
 
-	<h1>LawMe</h1>
-  <p><%= @user.email %></p>
-  <p><%= @client.name %></p>
-  <p><%= @client.number %></p>
-	<!-- checks if there is any case for display -->
-	<% if @cases == [] %>
+<section class="section">
+  <div class="columns">
+  	<div class="column is-one-eighth">
+	</div>
+  	<div class="column is-two-fifths">
+	  <div class="card">
+		<div class="card-content">
+		  <div class="content">
+		    <%= "Name: #{@client.name }" %>
+		    <br>
+		    <%= "Email: #{@user.email}" %>
+				<br>
+				<%= "Number: #{@client.number}" %>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="column is-one-eighth">
+	</div>
+	
+	<div class="column is-two-fifths">
+	  <div class="card">
+	    <div class="card-content">
+	      <div class="content">	
+	        <% if @cases == [] %>
+	          <p>No cases created</p>
+	        <% else %>
+		      <table class="table is-bordered">
+		        <thead>
+			      <tr>
+			        <th>S/No.</th>
+			        <th>Title</th>
+							<th>Edit?</th>
+			      </tr>
+		        </thead>
+		        <tbody>
 
-		<p>No records</p>
+		          <!-- display each case with an index -->
+		          <% @cases.each do |c| %>
+		            <tr>
+			          <td><%= c.id + 1 %></td>
 
-	<% else %>
-
-		<table class="table">
-			<thead>
-				<tr>
-					<th>S/No.</th>
-					<th>Title</th>
-          <th>Edit?</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-
-					<!-- display each case with an index -->
-					<% @cases.each do |c| %>
-						<td><%= c.id %></td>
-
-						<!-- links to the case show -->
-						<td><%= link_to c.title, case_path(c) %></td>
-            <td><%= link_to "Edit", edit_client_case_path(@client, c) %></td>
-					<% end %>
-				</tr>
-			</tbody>
-		</table>
-
-	<% end %>
-
-</div>
+								<!-- links to the case show -->
+								<td><%= link_to c.title, case_path(c) %></td>
+								<td><%= link_to "Edit", edit_client_case_path(@client, c) %></td>
+			        </tr>
+		          <% end %>
+		        </tbody>
+		      </table>
+	        <% end %>
+	      </div>
+	    </div>
+	  </div>
+    </div>	
+    <div class="column is-one-eighth">
+    </div>
+  </div>
+</section>
