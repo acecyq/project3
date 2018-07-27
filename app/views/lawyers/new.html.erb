@@ -1,9 +1,5 @@
 <div class="container">
 	
-	<h1>LAWME</h1>
-
-	<h3>Register New Lawyer</h3>
-	
 	<div class="card">
 	  <div class="card-content">
 	    <div class="content">
@@ -20,26 +16,29 @@
 					<%= f.text_field :name, class: "input", placeholder: "Name" %>
 				</div>
 			</div>
+			
+
+
+			<% if false %>
 			<div class="field">
 				<%= f.label(:specialization_ids, "Specialization", class: "checkbox") %>
 				<div class="control">
 					<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name %>
 				</div>
 			</div>
+			<% end %>
 
 
 
-			<div class="tags">
-			  <% specialization.each do |s| %>
-			  	<span class="tag">s.name</span>
-			  <% end %>
+			<div class="field">
+				<%= f.label(:specialization_ids, "Specialization", class: "checkbox") %>
+				<div class="control">
+					<% @specialization.each_with_index do |s, i| %>
+				  	  <%= check_box_tag('specialization_ids', i) %><%=s.name%><br>
+				    <% end %>
+					</div>
+				</div>
 			</div>
-
-
-
-
-
-
 		    <div class="field">
 				<%= f.label(:number, "Contact Number") %>
 				<div class="control">
@@ -74,3 +73,12 @@
 
 	
 </div>
+<% if false %>
+<script>
+	let checkbox = document.getElementsByClassName("checkbox")[0];
+	checkbox.addEventListener("click", function() {
+		console.log("ok");
+		document.querySelectorAll(#specialization_ids).style.display = "none";
+	})
+</script>
+<% end %>
