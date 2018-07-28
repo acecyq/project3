@@ -1,4 +1,11 @@
 <%if false%>
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+THIS IS COMMENTED OUT AND NOT USED
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 <nav class="navbar navbar-default">
   <div class="container-fluid navbar-container">
     <div class="navbar-header">
@@ -70,45 +77,56 @@
 </nav>
 <%end%>
 
+<%if false%>
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+WE ARE WORKING BELOW
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+<%end%>
+
 <section class="hero is-dark">
-        <nav class="navbar">
+  <nav class="navbar">
+      
+      <div class="navbar-brand">
+        <%= link_to image_tag("https://i.imgur.com/Mj3SPEU.png", size: "145x50",), root_path%>
+        <span class="navbar-burger burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+     
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+
+          <!-- if user has not chosen lawyer or client or if user has not logged in-->
+          <% if user_session == {} || user_session.nil? %>
+
+            <!-- shows login and register links -->
+            <%= link_to "Login", new_user_session_path, {:class=>"navbar-item"}  %>
+            <%= link_to "Register", new_user_registration_path, {:class=>"navbar-item"}  %>
+
+          <!-- if user is a lawyer -->
+          <% elsif user_session["user"] == "lawyer"  %>
             
-            <div class="navbar-brand">
-              <%= link_to image_tag("https://i.imgur.com/Mj3SPEU.png", size: "145x50",), root_path%>
-              <span class="navbar-burger burger" data-target="navbarMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-           
-            <div id="navbarMenu" class="navbar-menu">
-              <div class="navbar-end">
-                <% if user_session == {} || user_session.nil? %>                                       
-                  
-                  <%= link_to "Login", new_user_session_path, {:class=>"navbar-item"}  %>
-                  
-                  <%= link_to "Register", new_user_registration_path, {:class=>"navbar-item"}  %>
-                  
-                <% elsif user_session["user"] == "lawyer"  %>
-                  
-                  <%= link_to "Profile", dashboard_lawyer_path(@lawyer),  {:class=>"navbar-item"}  %>
-              
-                 
-                    <%= link_to "Logout", destroy_user_session_path,  method: :delete, class:"navbar-item"   %>
-                
+            <!-- shows profile and log out links -->
+            <%= link_to "Profile", lawyer_path(@lawyer),  {:class=>"navbar-item"}  %>
+            <%= link_to "Logout", destroy_user_session_path,  method: :delete, class:"navbar-item"   %>
+          
+          <!-- if user is a client -->
+          <% elsif user_session["user"] == "client" %> 
 
-                <% elsif user_session["user"] == "client" %> 
-
-                  <%= link_to "Profile", client_path(@client), {:class=>"navbar-item"}  %>
-
-                  <%= link_to "New Case", new_client_case_path(@client), {:class=>"navbar-item"}  %>
-
-                    
-                  <%= link_to "Logout", destroy_user_session_path,  method: :delete, class: "navbar-item"   %>
-                           
-                <%end%>
-              </div>
-            </div>
-        </nav>
+            <!-- shows profile, new case and log out links -->
+            <%= link_to "Profile", client_path(@client), {:class=>"navbar-item"}  %>
+            <%= link_to "New Case", new_client_case_path(@client), {:class=>"navbar-item"}  %>
+            <%= link_to "Logout", destroy_user_session_path,  method: :delete, class: "navbar-item"   %>     
+          <%end%>
+        </div>
+      </div>
+  </nav>
 </section>
