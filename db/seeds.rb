@@ -16,7 +16,18 @@
 
 
 # run rails db:drop, db:create and db:migrate
-# sign up 8 users before running this seed file
+# all users have banana passwords
+
+
+User.create(email: 'shaun@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'vinny@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'ace@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'akira@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'leon@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'julian@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'sam@gmail.com', password: 'banana', password_confirmation: 'banana')
+User.create(email: 'jay@gmail.com', password: 'banana', password_confirmation: 'banana')
+
 
 Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "https://www.koreaboo.com/wp-content/uploads/2017/09/songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
 Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "https://showtimelive.co.uk/wp-content/uploads/2018/05/Sean-Paul-High-Definition-Wallpapers-.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
