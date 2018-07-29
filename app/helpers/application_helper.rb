@@ -4,7 +4,7 @@ module ApplicationHelper
         when 'notice'  then 'modal is-active notification is-info'
         when 'success' then 'modal is-active notification is-success'
         when 'error'   then 'modal is-active notification is-danger'
-        when 'alert'   then 'modal is-active notification is-warning'
+        when 'alert'   then 'modal is-active notification is-warning-ish'
         end
     end
 end

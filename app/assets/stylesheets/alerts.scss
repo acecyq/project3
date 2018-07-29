@@ -21,8 +21,9 @@
 
 /* rails alert styling */
 .alert-success { background-color: #23d160; color: #fff; }
-.alert-error   { background-color: #ffdd57; color: rgba(0, 0, 0, 0.7); }
+.alert-error   { background-color: #e27d2b; color: rgba(0, 0, 0, 0.7); }
 .alert-info    { background-color: #209cee; color: #fff; }
 .dismissed     { display: none; }
 .notification  { cursor: pointer; width: 66%; height:33%; margin: auto; width: 50%; height:8%; margin:auto; }
 .is-active     { position: absolute; bottom: 88%; }
+.is-warning-ish {background-color:hsl(27, 76%, 53%)}
