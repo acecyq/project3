@@ -29,10 +29,16 @@ User.create(email: 'sam@gmail.com', password: 'banana', password_confirmation: '
 User.create(email: 'jay@gmail.com', password: 'banana', password_confirmation: 'banana')
 
 
-Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "https://www.koreaboo.com/wp-content/uploads/2017/09/songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
-Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "https://showtimelive.co.uk/wp-content/uploads/2018/05/Sean-Paul-High-Definition-Wallpapers-.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
-Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "https://www.grammy.com/sites/com/files/styles/image_landscape_hero/public/brunomars-hero_0.jpg?itok=NxVLunrf", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
-Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "https://cdn.images.dailystar.co.uk/dynamic/58/photos/976000/620x/Lionel-Messi-718661.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
+# Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "https://www.koreaboo.com/wp-content/uploads/2017/09/songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
+# Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "https://showtimelive.co.uk/wp-content/uploads/2018/05/Sean-Paul-High-Definition-Wallpapers-.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
+# Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "https://www.grammy.com/sites/com/files/styles/image_landscape_hero/public/brunomars-hero_0.jpg?itok=NxVLunrf", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
+# Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "https://cdn.images.dailystar.co.uk/dynamic/58/photos/976000/620x/Lionel-Messi-718661.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
+
+# After Carrierwave
+Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
+Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "seanpaul.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
+Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "brunomars.jpg", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
+Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "lionelmessi.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
 Client.create(name: "Client1", number: "82768347", user_id: 5)
 Client.create(name: "Client2", number: "82347264", user_id: 6)
 Client.create(name: "Client3", number: "82746827", user_id: 7)

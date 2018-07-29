@@ -7,7 +7,8 @@
 	  <div class="card">
 		<div class="card-image">
 		  <figure class="image">
-		    <%= image_tag "#{l.photo}" %>
+		    <!-- <%= image_tag "#{l.photo}" %> -->
+		    <%= image_tag(l.photo.url, alt: 'Photograph') if l.photo? %>
 		  </figure>
 		</div>
 		<div class="card-content">
