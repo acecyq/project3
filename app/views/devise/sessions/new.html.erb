@@ -3,7 +3,7 @@
 <%= content_for :page_description, 'Sign into your account' %>
 
 
-<section class="section">
+<section class="section Site-content">
   <div class="container">
     <div class="columns">
     <div class="column is-three-fifths is-offset-one-fifth">
@@ -15,7 +15,7 @@
                 <div class="container">
                   <div class="columns is-vcentered">
                     <div class="column">
-                      <h1 class="title is-size-1">Sign In</h1>
+                      <h1 class="title is-size-1" style="color: hsl(27, 76%, 53%)">Sign In</h1>
                       <h3 class="subtitle is-size-3">Ready for LawMe</h3>
                     </div>
                   </div>
@@ -42,13 +42,13 @@
 
               <% if devise_mapping.rememberable? -%>
                 <div class="field">
-                  <label class="label">Remember me</label>
+                  <label class="label">Remember me</label><p class="label"></p>
                   <%= f.check_box :remember_me, class: "checkbox" %>
                 </div>
               <% end -%>
 
-              <div class="actions is-centered is-focus-padded">
-                <%= f.submit "Sign in", class: "button is-warning" %>
+              <div class="actions">
+                <%= f.submit "Sign in", class: "button is-warning-ish" %>
               </div>
             <% end %>
 
