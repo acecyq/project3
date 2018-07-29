@@ -17,6 +17,7 @@
 
 # run rails db:drop, db:create and db:migrate
 # all users have banana passwords
+# cannot really seed lawyers details so will have to log in user 1 to 4 and register as lawyers. Prepare photos to upload
 
 
 User.create(email: 'shaun@gmail.com', password: 'banana', password_confirmation: 'banana')
@@ -28,17 +29,23 @@ User.create(email: 'julian@gmail.com', password: 'banana', password_confirmation
 User.create(email: 'sam@gmail.com', password: 'banana', password_confirmation: 'banana')
 User.create(email: 'jay@gmail.com', password: 'banana', password_confirmation: 'banana')
 
-
+# Initially
 # Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "https://www.koreaboo.com/wp-content/uploads/2017/09/songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
 # Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "https://showtimelive.co.uk/wp-content/uploads/2018/05/Sean-Paul-High-Definition-Wallpapers-.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
 # Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "https://www.grammy.com/sites/com/files/styles/image_landscape_hero/public/brunomars-hero_0.jpg?itok=NxVLunrf", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
 # Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "https://cdn.images.dailystar.co.uk/dynamic/58/photos/976000/620x/Lionel-Messi-718661.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
 
 # After Carrierwave
-Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
-Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "seanpaul.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
-Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "brunomars.jpg", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
-Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "lionelmessi.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
+# Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
+# Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "seanpaul.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
+# Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "brunomars.jpg", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
+# Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "lionelmessi.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
+
+# After Cloudinary
+# Lawyer.create(name: "Law1", number: "83242383", description: "Lawyer number 1", photo: "image/upload/v1532881084/songjoongki1.jpg", firm: "LawOne Pte Ltd", address: "1 Claymore Hill", user_id: 1)
+# Lawyer.create(name: "Law2", number: "87654321", description: "Lawyer number 2", photo: "image/upload/v1532881085/seanpaul.jpg", firm: "LawTwo Pte Ltd", address: "2 Claymore Hill", user_id: 2)
+# Lawyer.create(name: "Law3", number: "92347892", description: "Lawyer number 3", photo: "image/upload/v1532881084/brunomars.jpg", firm: "LawThree Pte Ltd", address: "3 Claymore Hill", user_id: 3)
+# Lawyer.create(name: "Law4", number: "97897834", description: "Lawyer number 4", photo: "image/upload/v1532881084/lionelmessi.jpg", firm: "LawFour Pte Ltd", address: "4 Claymore Hill", user_id: 4)
 Client.create(name: "Client1", number: "82768347", user_id: 5)
 Client.create(name: "Client2", number: "82347264", user_id: 6)
 Client.create(name: "Client3", number: "82746827", user_id: 7)
@@ -86,11 +93,11 @@ specializations.each do |s|
 	Specialization.create(name: s)
 end
 
-Specialization.find(1).lawyers << Lawyer.find(1)
-Specialization.find(4).lawyers << Lawyer.find(1)
-Specialization.find(2).lawyers << Lawyer.find(2)
-Specialization.find(3).lawyers << Lawyer.find(2)
-Specialization.find(5).lawyers << Lawyer.find(3)
-Specialization.find(7).lawyers << Lawyer.find(3)
-Specialization.find(6).lawyers << Lawyer.find(4)
-Specialization.find(8).lawyers << Lawyer.find(4)
+# Specialization.find(1).lawyers << Lawyer.find(1)
+# Specialization.find(4).lawyers << Lawyer.find(1)
+# Specialization.find(2).lawyers << Lawyer.find(2)
+# Specialization.find(3).lawyers << Lawyer.find(2)
+# Specialization.find(5).lawyers << Lawyer.find(3)
+# Specialization.find(7).lawyers << Lawyer.find(3)
+# Specialization.find(6).lawyers << Lawyer.find(4)
+# Specialization.find(8).lawyers << Lawyer.find(4)
