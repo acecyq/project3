@@ -42,12 +42,12 @@
 
               <% if devise_mapping.rememberable? -%>
                 <div class="field">
-                  <label class="label">Remember me</label>
+                  <label class="label">Remember me</label><p class="label"></p>
                   <%= f.check_box :remember_me, class: "checkbox" %>
                 </div>
               <% end -%>
 
-              <div class="actions is-centered is-focus-padded">
+              <div class="actions">
                 <%= f.submit "Sign in", class: "button is-warning" %>
               </div>
             <% end %>
