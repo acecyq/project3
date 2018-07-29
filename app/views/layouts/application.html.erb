@@ -13,7 +13,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="Site">
     <% flash.each do |key, value| %>
       <% if value.class == Array %>
         <div id="notificationMessage" class="<%= flash_class(key) %>" onClick="document.getElementById('notificationMessage').classList.remove('is-active')"><% value.each do |message| %><%= message %></br><% end %></div>

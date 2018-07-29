@@ -19,7 +19,16 @@
 .is-danger a { color: white; }
 .label {display: inline;}
 .is-dark-ish {background-color: rgba(54, 54, 54, 0.33) }
-.navbar-item {color:hsl(27, 76%, 53%);}
+.navbar-item {color:hsl(26, 76%, 53%);}
+.Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+ }
+
+ .Site-content {
+    flex: 1;
+  }
 
 /* rails alert styling */
 .alert-success { background-color: #23d160; color: #fff; }
@@ -28,4 +37,4 @@
 .dismissed     { display: none; }
 .notification  { cursor: pointer; width: 66%; height:33%; margin: auto; width: 50%; height:8%; margin:auto; }
 .is-active     { position: absolute; bottom: 88%; }
-.is-warning-ish {background-color:hsl(27, 76%, 53%)}
+.is-warning-ish {background-color:hsl(26, 76%, 53%)}
