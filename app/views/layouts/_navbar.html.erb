@@ -21,7 +21,8 @@
                 <% elsif user_session["user"] == "lawyer"  %>
                   
                   <%= link_to "Profile", dashboard_lawyer_path(@lawyer),  {:class=>"navbar-item"}  %>
-              
+
+                  <%= link_to "Edit Profile", edit_lawyer_path(@lawyer), {:class=>"navbar-item"}  %>
                  
                     <%= link_to "Logout", destroy_user_session_path,  method: :delete, class:"navbar-item"   %>
                 
