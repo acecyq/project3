@@ -4,17 +4,9 @@
 
 /* call on parent element to make child elements 'sit down' on the baseline regardless of height */
 
-.is-bottom-aligned {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-.is-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.is-bottom-aligned { display: flex; justify-content: flex-end; flex-direction: column; }
+.is-centered       { display: flex; align-items: center; justify-content: center; }
+.is-centered-ish   { text-align: center; align-items: center; justify-content: center; }
 
 /* spacing utilities */
 
@@ -75,9 +67,11 @@
   flex-direction: column;
 }
 
-.Site-content {
-  flex: 1;
-}
+ .Site-content {
+    flex: 1;
+  }
+  .special{border: black; font-weight: bold;}
+
 
 /* rails alert styling */
 
