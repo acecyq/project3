@@ -19,21 +19,25 @@
                   <%= link_to "Register", new_user_registration_path, {:class=>"navbar-item"}  %>
                   
                 <% elsif user_session["user"] == "lawyer"  %>
-                  
-                  <%= link_to "Profile", lawyer_path(@lawyer),  {:class=>"navbar-item"}  %>
 
-                  <%= link_to "Edit Profile", edit_lawyer_path(@lawyer), {:class=>"navbar-item"}  %>
+                  <%= link_to "Inbox", messages_path %>
+                  
+                  <%= link_to "Profile", lawyer_path(Lawyer.find(current_user.lawyer.id)),  {:class=>"navbar-item"}  %>
+
+                  <%= link_to "Edit Profile", edit_lawyer_path(Lawyer.find(current_user.lawyer.id)), {:class=>"navbar-item"}  %>
                  
-                    <%= link_to "Logout", destroy_user_session_path,  method: :delete, class:"navbar-item"   %>
+                  <%= link_to "Logout", destroy_user_session_path,  method: :delete, class:"navbar-item"   %>
                 
 
                 <% elsif user_session["user"] == "client" %> 
 
-                  <%= link_to "Profile", client_path(@client), {:class=>"navbar-item"}  %>
+                  <%= link_to "Inbox", messages_path %>
 
-                  <%= link_to "Edit Profile", edit_client_path(@client), {:class=>"navbar-item"}  %>
+                  <%= link_to "Profile", client_path(Client.find(current_user.client.id)), {:class=>"navbar-item"}  %>
 
-                  <%= link_to "New Case", new_client_case_path(@client), {:class=>"navbar-item"}  %>
+                  <%= link_to "Edit Profile", edit_client_path(Client.find(current_user.client.id)), {:class=>"navbar-item"}  %>
+
+                  <%= link_to "New Case", new_client_case_path(Client.find(current_user.client.id)), {:class=>"navbar-item"}  %>
 
                     
                   <%= link_to "Logout", destroy_user_session_path,  method: :delete, class: "navbar-item"   %>

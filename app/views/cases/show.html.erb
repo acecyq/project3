@@ -32,6 +32,9 @@
                             <strong>Name :</strong> <%= @client.name %><br />
                             <strong>Number :</strong> <%= @client.number %><br />
                             </p>
+                            <% if current_user.lawyer != nil %>
+                              <%= link_to "Message", "/messages/new?receiver_id=#{@client.user.id}" %>
+                            <% end %>
                             </footer>
 							</div>
 						</div>

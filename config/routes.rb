@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   resources :cases
   resources :lawyers
+  resources :messages
 
   root to: "cases#index"
 
