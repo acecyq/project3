@@ -1,20 +1,46 @@
-<div class="container">
+<section class="section Site-content">
+	<div class="container">
+		<div class="columns">
+			<div class=column></div>
+				<div class="column is-two-thirds">
+					<div class="card">
+						<div class="card-content">
+							<div class="content">
+								  <section class="hero is-dark">
+									<div class="hero-body">
+									<div class="container">
+										<div class="columns is-vcentered">
+										<div class="column">
+											<h1 class="title is-size-2" style="color: hsl(27, 76%, 53%)">Case Details</h1>
+											<h3 class="subtitle is-size-4">Looking at LawMe</h3>
+										</div>
+										</div>
+									</div>
+									</div>
+									</section>
+								<br />
+                                <strong class="is-size-4"><%= @case.title %></strong>
+                            <p>
+                            <strong>Specialization :</strong> <%= @case.specialization %><br />
+                            <strong>Created Date:</strong> <%= @case.created_at %><br />
+                            </p>
 
-	<h1>LAWME</h1>
-
-	<h3><%= @case.title %></h3>
-<p>
-   <strong>Specialization :</strong> <%= @case.specialization %><br />
-   <strong>Created Date:</strong> <%= @case.created_at %><br />
-</p>
-
-<p><%= @case.description %></p>
-
-<p>
-   <strong>Name :</strong> <%= @client.name %><br />
-   <strong>Number :</strong> <%= @client.number %><br />
-</p>
-
+                            <p><%= @case.description %></p>
+                            <footer class="card-footer", style="display:block">
+                            <strong class="is-size-5"> Client Details</strong>
+                            <p >
+                            <strong>Name :</strong> <%= @client.name %><br />
+                            <strong>Number :</strong> <%= @client.number %><br />
+                            </p>
+                            </footer>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class=column></div>		
+		</div>	
+	</div>	
+</section>	
 
 
 
