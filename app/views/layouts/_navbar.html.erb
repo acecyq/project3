@@ -20,7 +20,7 @@
                   
                 <% elsif user_session["user"] == "lawyer"  %>
 
-                  <%= link_to "Inbox", messages_path %>
+                  <%= link_to "Inbox", messages_path, {:class=>"navbar-item"} %>
                   
                   <%= link_to "Profile", lawyer_path(Lawyer.find(current_user.lawyer.id)),  {:class=>"navbar-item"}  %>
 
@@ -31,7 +31,7 @@
 
                 <% elsif user_session["user"] == "client" %> 
 
-                  <%= link_to "Inbox", messages_path %>
+                  <%= link_to "Inbox", messages_path, {:class=>"navbar-item"} %>
 
                   <%= link_to "Profile", client_path(Client.find(current_user.client.id)), {:class=>"navbar-item"}  %>
 

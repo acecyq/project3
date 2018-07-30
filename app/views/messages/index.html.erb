@@ -1,10 +1,26 @@
-<% @message.each do |m| %>
-<p>From: <%= User.find(m.sender_id).client ? User.find(m.sender_id).client.name : User.find(m.sender_id).lawyer.name %> </p>
-<p>To: <%= User.find(m.receiver_id).client ? User.find(m.receiver_id).client.name : User.find(m.receiver_id).lawyer.name %> </p>
-<p><%= m.title %></p>
-<p><%= m.content %></p>
-  <% if m.sender_id != current_user.id %>
-    <%= link_to "Reply", "messages/new?receiver_id=#{m.sender_id}", class: "button" %>
-  <% end %>
-<hr>
-<% end %>
+<section class="section Site-content">
+	<div class="container">
+		<div class="columns">
+			<div class="column"></div>
+      <div class="column is-four-fifths"> 
+        <% @message.each do |m| %>
+        <article class="message">
+          <div class="message-header"> <%= m.title %> </div>
+          <div class="message-body" style="font-weight: 450;">    
+            From: <%= User.find(m.sender_id).client ? User.find(m.sender_id).client.name : User.find(m.sender_id).lawyer.name %><br>
+            To: <%= User.find(m.receiver_id).client ? User.find(m.receiver_id).client.name : User.find(m.receiver_id).lawyer.name %><hr style="margin:1rem 0; background-color: #4a4a4a">
+          
+            <%= m.content %><hr style="margin: 1rem 0;">
+
+            <% if m.sender_id != current_user.id %>
+              <%= link_to "Reply", "messages/new?receiver_id=#{m.sender_id}", class: "button is-warning-ish" %> 
+            <% end %>
+
+          </div>
+        </article>
+        <% end %>
+      </div>
+      <div class="column"></div>  
+    </div>
+  </div>
+</section>  
