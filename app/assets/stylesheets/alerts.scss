@@ -1,40 +1,124 @@
 /* utilities that extend bulma */
 
 /* flex-based positioning utilities */
+
 /* call on parent element to make child elements 'sit down' on the baseline regardless of height */
-.is-bottom-aligned { display: flex; justify-content: flex-end; flex-direction: column; }
-.is-centered       { display: flex; align-items: center; justify-content: center; }
+
+.is-bottom-aligned {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.is-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* spacing utilities */
-.is-padless       { padding: 0 0 0 0; }
-.is-marginless    { margin: 0 0 0 0; }
-.is-topgapless    { margin-top: 0; padding-top: 0; }
-.is-bottomgapless { margin-bottom: 0; padding-bottom: 0; }
-.is-focus-padded { padding: 2em; }
+
+.is-padless {
+  padding: 0 0 0 0;
+}
+
+.is-marginless {
+  margin: 0 0 0 0;
+}
+
+.is-topgapless {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.is-bottomgapless {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.is-focus-padded {
+  padding: 2em;
+}
+
 /* appearance utilities */
-.is-borderless    { border: 0; }
+
+.is-borderless {
+  border: 0;
+}
 
 /* theme customization */
-.footer {background-color: rgba(54, 54, 54,0.83) ; padding: 2rem 1.5rem 3rem; }
-.is-danger a { color: white; }
-.label {display: inline;}
-.is-dark-ish {background-color: rgba(54, 54, 54, 0.33) }
-.navbar-item {color:hsl(26, 76%, 53%);}
-.Site {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
- }
 
- .Site-content {
-    flex: 1;
-  }
+.footer {
+  background-color: rgba(54, 54, 54, 0.83);
+  padding: 2rem 1.5rem 3rem;
+}
+
+.is-danger a {
+  color: white;
+}
+
+.label {
+  display: inline;
+}
+
+.is-dark-ish {
+  background-color: rgba(54, 54, 54, 0.33)
+}
+
+.navbar-item {
+  color: hsl(26, 76%, 53%);
+}
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
 
 /* rails alert styling */
-.alert-success { background-color: #23d160; color: #fff; }
-.alert-error   { background-color: #e27d2b; color: rgba(0, 0, 0, 0.7); }
-.alert-info    { background-color: #209cee; color: #fff; }
-.dismissed     { display: none; }
-.notification  { cursor: pointer; width: 66%; height:33%; margin: auto; width: 50%; height:8%; margin:auto; }
-.is-active     { position: absolute; bottom: 88%; }
-.is-warning-ish {background-color:hsl(26, 76%, 53%)}
+
+.alert-success {
+  background-color: #23d160;
+  color: #fff;
+}
+
+.alert-error {
+  background-color: #e27d2b;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.alert-info {
+  background-color: #209cee;
+  color: #fff;
+}
+
+.dismissed {
+  display: none;
+}
+
+.notification {
+  cursor: pointer;
+  width: 66%;
+  height: 33%;
+  margin: auto;
+  width: 50%;
+  height: 8%;
+  margin: auto;
+}
+
+.is-active {
+  position: absolute;
+  bottom: 88%;
+}
+
+.is-warning-ish {
+  background-color: hsl(26, 76%, 53%)
+}
+
+.is-danger-ish {
+  background-color: #d92626
+}
