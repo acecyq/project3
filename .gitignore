@@ -28,3 +28,8 @@
 .ruby-version
 Gemfile
 
+# for Carrierwave
+public/uploads
+
+
+

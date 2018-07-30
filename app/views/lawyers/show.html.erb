@@ -1,14 +1,15 @@
 <% l = @lawyer %>
 <% ls = @lawyer.specializations %>
-<section class="section">
+<section class="section Site-content">
   <div class="columns">
   	<div class="column is-one-eighth">
 	</div>
-  	<div class="column is-two-fifths">
+  	<div class="column is-3">
 	  <div class="card">
 		<div class="card-image">
-		  <figure class="image">
-		    <%= image_tag "#{l.photo}" %>
+		  <figure class="image is-3by4">
+		    <!-- <%= image_tag "#{l.photo}" %> -->
+		    <%= image_tag l.photo_url, alt: l.name %>
 		  </figure>
 		</div>
 	  </div>
@@ -16,18 +17,18 @@
 	<div class="column is-one-eighth">
 	</div>
 	
-	<div class="column is-two-fifths">
+	<div class="column is-three-fifths">
 	  <div class="card">
 	    <div class="card-content">
 	      <div class="content">	
 		    <table class="table is-bordered">
 		      <thead>
+		      	<tr>
+				  <th class="is-narrow">Name:</th>
+				  <th><%= l.name %></th>
+		        </tr>
 		      </thead>
 		      <tbody>
-				<tr>
-				  <td>Name:</td>
-				  <td><%= l.name %></td>
-		        </tr>
 		        <tr>
 		          <td>Email:</td>
 		          <td><%= @user.email %></td>

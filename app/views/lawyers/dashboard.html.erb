@@ -1,20 +1,21 @@
 <% l = @lawyer %>
-<section class="section">
+<section class="section Site-content">
   <div class="columns">
   	<div class="column is-one-eighth">
 	</div>
-  	<div class="column is-two-fifths">
+  	<div class="column is-3">
 	  <div class="card">
 		<div class="card-image">
-		  <figure class="image">
-		    <%= image_tag "#{l.photo}" %>
+		  <figure class="image is-3by4">
+		    <!-- <%= image_tag "#{l.photo}" %> -->
+		    <%= image_tag l.photo_url, alt: l.name %>
 		  </figure>
 		</div>
 		<div class="card-content">
 		  <div class="content">
-		    <%= "Name: #{l.name}" %>
+		    <strong><%= "Name: #{l.name}" %></strong>
 		    <br>
-		    <%= "Email: #{l.user.email}" %>
+		    <strong><%= "Email: #{l.user.email}" %></strong>
 		  </div>
 		</div>
 	  </div>
@@ -22,17 +23,18 @@
 	<div class="column is-one-eighth">
 	</div>
 	
-	<div class="column is-two-fifths">
+	<div class="column is-three-fifths">
 	  <div class="card">
 	    <div class="card-content">
 	      <div class="content">	
+	      	<strong>Prospective Cases</strong>
 	        <% if @case == [] %>
 	          <p>There is no case that interests you at the moment</p>
 	        <% else %>
 		      <table class="table is-bordered">
 		        <thead>
 			      <tr>
-			        <th>S/No.</th>
+			        <th class="is-narrow">S/No.</th>
 			        <th>Title</th>
 			      </tr>
 		        </thead>
