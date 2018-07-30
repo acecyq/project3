@@ -22,8 +22,9 @@
 								<%= form_for @case,url:client_cases_path, :local => true do |f| %>
 									<div class="field">
 										<%= f.label(:title, "Title") %>
-										<div class="control">
+										<div class="control has-icons-left">
 											<%= f.text_field :title, class: "input" %>
+											<span class="icon"><i class="fas fa-pen-fancy"></i></span>
 										</div>
 									</div>
 										<div class="field">
@@ -37,12 +38,12 @@
 									</div>
 										<div class="field">
 										<%= f.label(:description, "Description") %>
-											<div class="control">
+											<div class="control has-icons-left">
 												<%= f.text_area :description, class:"textarea" %>
 											</div>
 									</div>
 									<div class=class="actions is-centered is-focus-padded">
-										<%= f.submit 'Create', :type => "submit", class: "button is-warning" %>
+										<%= f.submit 'Create', :type => "submit", class: "button is-warning-ish" %>
 									</div>
 								<% end %>
 							</div>

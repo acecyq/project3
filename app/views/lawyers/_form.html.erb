@@ -1,81 +1,104 @@
 <section class="section Site-content">
 	
-	<div class="card">
-	  <div class="card-content">
-	    <div class="content">
-	      <%= form_for lawyer, :local => true do |f| %>
+	<div class="container">
+		<div class="columns">
+			<div class="column"></div>
+			<div class="column is-two-thirds">
+				<div class="card">
+					<div class="card-content">
+						<div class="content">
+							<section class="hero is-dark">
+								<div class="hero-body">
+								<div class="container">
+									<div class="columns is-vcentered">
+									<div class="column">
+											<h1 class="title is-size-2" style="color: hsl(27, 76%, 53%)">Lawyer Details</h1>
+											<h3 class="subtitle is-size-4">LawMe provider</h3>
+									</div>
+									</div>
+								</div>
+								</div>
+							</section>
+							<br/>							
+							<%= form_for lawyer, :local => true do |f| %>
+								<!-- photograph input -->
+								<div class="field">
+									<%= f.label(:photo, "Photograph") %>
+									<div class="control">
+										<%= f.file_field :photo, class: "input" %>
+									</div>
+								</div>
 
-	      	<!-- photograph input -->
-			<div class="field">
-				<%= f.label(:photo, "Photograph") %>
-				<div class="control">
-					<%= f.file_field :photo, class: "input" %>
+								<!-- name input -->
+								<div class="field">
+									<%= f.label(:name, "Name") %>
+									<div class="control has-icons-left">
+										<%= f.text_field :name, class: "input", placeholder: "Name" %>
+										<span class="icon"><i class="fas fa-pen-fancy"></i></span>
+									</div>
+								</div>
+								
+								<!-- specialization checkboxes -->
+								<div class="field">
+									<%= f.label(:specialization_ids, "Specialization", class: "button hide") %>
+									<div id="checkboxes">
+										<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name do |b| %>
+											<p>
+												<%= b.check_box %>
+												<%= b.label %>
+											</p>
+										<%end%>
+									</div>
+								</div>
+
+								<!-- number input -->
+								<div class="field">
+									<%= f.label(:number, "Contact Number") %>
+									<div class="control has-icons-left">
+										<%= f.text_field :number, class: "input", placeholder: "Contact Number" %>
+										<span class="icon"><i class="fas fa-phone"></i></span>
+									</div>
+								</div>
+
+								<!-- description input -->
+								<div class="field">
+									<%= f.label(:description, "Description") %>
+									<div class="control has-icons-left">
+										<%= f.text_area :description, class: "input", placeholder: "Describe Yourself" %>
+										<span class="icon"><i class="fas fa-address-card"></i></span>
+									</div>
+								</div>
+
+								<!-- firm name input -->
+								<div class="field">
+									<%= f.label(:firm, "Law Firm") %>
+									<div class="control has-icons-left">
+										<%= f.text_field :firm, class: "input", placeholder: "Law Firm" %>
+										<span class="icon"><i class="fas fa-user-tie"></i></span>
+									</div>
+								</div>
+
+								<!-- firm address input -->
+								<div class="field">
+									<%= f.label(:address, "Firm Address") %>
+									<div class="control has-icons-left">
+										<%= f.text_field :address, class: "input", placeholder: "Company Address" %>
+										<span class="icon"><i class="fas fa-map-marked-alt"></i></span>
+									</div>
+								</div>
+
+								<!-- register button -->
+								<div class="field">
+									<%= f.submit 'Register', :type => "submit", class: "button is-warning-ish" %>
+								</div>
+							<% end %>
+						</div>	
+					</div>
 				</div>
-			</div>
-
-			<!-- name input -->
-			<div class="field">
-				<%= f.label(:name, "Name") %>
-				<div class="control">
-					<%= f.text_field :name, class: "input", placeholder: "Name" %>
-				</div>
-			</div>
-			
-			<!-- specialization checkboxes -->
-			<div class="field">
-				<%= f.label(:specialization_ids, "Specialization", class: "button hide") %>
-				<div id="checkboxes">
-					<%= f.collection_check_boxes :specialization_ids, @specialization, :id, :name do |b| %>
-						<p>
-							<%= b.check_box %>
-	    					<%= b.label %>
-						</p>
-					<%end%>
-				</div>
-			</div>
-
-			<!-- number input -->
-		    <div class="field">
-				<%= f.label(:number, "Contact Number") %>
-				<div class="control">
-					<%= f.text_field :number, class: "input", placeholder: "Contact Number" %>
-				</div>
-			</div>
-
-			<!-- description input -->
-			<div class="field">
-				<%= f.label(:description, "Description") %>
-				<div class="control">
-					<%= f.text_area :description, class: "input", placeholder: "Describe Yourself" %>
-				</div>
-			</div>
-
-			<!-- firm name input -->
-			<div class="field">
-				<%= f.label(:firm, "Law Firm") %>
-				<div class="control">
-					<%= f.text_field :firm, class: "input", placeholder: "Law Firm" %>
-				</div>
-			</div>
-
-			<!-- firm address input -->
-			<div class="field">
-				<%= f.label(:address, "Firm Address") %>
-				<div class="control">
-					<%= f.text_field :address, class: "input", placeholder: "Company Address" %>
-				</div>
-			</div>
-
-			<!-- register button -->
-			<div class="field">
-				<%= f.submit 'Register', :type => "submit", class: "button" %>
-			</div>
-		<% end %>
-	    </div>
-	  </div>
-	</div>
-
-	
+			</div>	
+			<div class="column"></div>
+		</div>	
+	</div>	
 </section>
 
 <script>
