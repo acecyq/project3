@@ -23,7 +23,10 @@
 								
 								<div class="field">
 									<%= f.label(:title, "Title") %>
+									<div class="control has-icons-left">
 									<%= f.text_field :title, class: "input" %>
+									<span class="icon"><i class="fas fa-pen-fancy"></i></span>
+									</div>
 								</div>
 
 								<div class="field">
@@ -35,9 +38,11 @@
 									<% end %>
 								</div>
 
-								<div class="field">
+								<div class="field">	
 									<%= f.label(:description, "Case Details") %>
-									<%= f.text_area(:description, class: "input") %>
+									<div class="control has-icons-left">
+										<%= f.text_area :description, class:"textarea" %>
+									</div>
 								</div>
 
 								<div class="field">

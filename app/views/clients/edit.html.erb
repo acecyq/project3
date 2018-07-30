@@ -22,14 +22,16 @@
 								<%= form_for @client, :local => true do |f| %>
 									<div class="field">
 										<%= f.label(:name, "Name") %>
-										<div class="control">
+										<div class="control has-icons-left">
 											<%= f.text_field :name, class: "input", placeholder: "Name" %>
+											<span class="icon"><i class="fas fa-pen-fancy"></i></span>
 										</div>
 									</div>
 										<div class="field">
 										<%= f.label(:number, "Contact Number") %>
-										<div class="control">
+										<div class="control has-icons-left">
 											<%= f.text_field :number, class: "input", placeholder: "Contact Number" %>
+											<span class="icon"><i class="fas fa-phone"></i></span>
 										</div>
 									</div>
 									<div class=class="actions is-centered is-focus-padded">
