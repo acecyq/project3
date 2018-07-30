@@ -9,7 +9,7 @@
                   <section class="hero is-dark">
                     <div class="hero-body">
                       <div class="container">
-                        <div class="columns is-vcentered">
+                        <div class="columns is-centered">
                           <div class="column">
                             <h1 class="title is-size-2" style="color: hsl(27, 76%, 53%)">New Message</h1>
                             <h3 class="subtitle is-size-4">Requesting for LawMe</h3>
@@ -22,32 +22,33 @@
                 <%= form_for @message, :local => true do |f| %>
                   <div class="field">
                     <%= f.label(:title, "Title") %>
-                    <div class="control">
+                    <div class="control has-icons-left">
                       <%= f.text_field :title, class: "input" %>
+                      <span class="icon"><i class="fas fa-pen-fancy"></i></span>
                     </div>
                   </div>
                   <div class="field">
                     <%= f.label(:content, "content") %>
                     <div class="control">
-                      <%= f.text_field :content, class: "text-area" %>
+                      <%= f.text_field :content, class: "textarea" %>
                     </div>
                   </div>
-                  <div class="field">
+                  <div class="field is-hidden">
                     <%= f.label(:receiver_id, "receiver_id") %>
                     <div class="control">
-                      <%= f.text_field :receiver_id, class: "text-area", :value => @receiver_id %>
+                      <%= f.text_field :receiver_id, class: "input", :value => @receiver_id %>
                     </div>
                   </div>
 
                   <div class=class="actions is-centered is-focus-padded">
-                    <%= f.submit 'Create', :type => "submit", class: "button is-warning" %>
+                    <%= f.submit 'Send', :type => "submit", class: "button is-warning-ish" %>
                   </div>
                 <% end %>
               </div>
             </div>
           </div>
-        <div class=column></div>  
       </div>
+      <div class="column"></div>  
     </div>  
   </div>  
 </section>  
