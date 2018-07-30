@@ -4,6 +4,7 @@
 /* call on parent element to make child elements 'sit down' on the baseline regardless of height */
 .is-bottom-aligned { display: flex; justify-content: flex-end; flex-direction: column; }
 .is-centered       { display: flex; align-items: center; justify-content: center; }
+.is-centered-ish   { text-align: center; align-items: center; justify-content: center; }
 
 /* spacing utilities */
 .is-padless       { padding: 0 0 0 0; }
@@ -29,6 +30,7 @@
  .Site-content {
     flex: 1;
   }
+  .special{border: black; font-weight: bold;}
 
 /* rails alert styling */
 .alert-success { background-color: #23d160; color: #fff; }
