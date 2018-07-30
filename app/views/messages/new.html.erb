@@ -1,0 +1,53 @@
+<section class="section Site-content">
+  <div class="container">
+    <div class="columns">
+      <div class=column></div>
+        <div class="column is-two-thirds">
+          <div class="card">
+            <div class="card-content">
+              <div class="content">
+                  <section class="hero is-dark">
+                    <div class="hero-body">
+                      <div class="container">
+                        <div class="columns is-vcentered">
+                          <div class="column">
+                            <h1 class="title is-size-2" style="color: hsl(27, 76%, 53%)">New Message</h1>
+                            <h3 class="subtitle is-size-4">Requesting for LawMe</h3>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  <br/>
+                <%= form_for @message, :local => true do |f| %>
+                  <div class="field">
+                    <%= f.label(:title, "Title") %>
+                    <div class="control">
+                      <%= f.text_field :title, class: "input" %>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <%= f.label(:content, "content") %>
+                    <div class="control">
+                      <%= f.text_field :content, class: "text-area" %>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <%= f.label(:receiver_id, "receiver_id") %>
+                    <div class="control">
+                      <%= f.text_field :receiver_id, class: "text-area", :value => @receiver_id %>
+                    </div>
+                  </div>
+
+                  <div class=class="actions is-centered is-focus-padded">
+                    <%= f.submit 'Create', :type => "submit", class: "button is-warning" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <div class=column></div>  
+      </div>
+    </div>  
+  </div>  
+</section>  

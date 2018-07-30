@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_131755) do
+ActiveRecord::Schema.define(version: 2018_07_30_072913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(version: 2018_07_25_131755) do
     t.datetime "updated_at", null: false
     t.index ["lawyer_id"], name: "index_lawyers_specializations_on_lawyer_id"
     t.index ["specialization_id"], name: "index_lawyers_specializations_on_specialization_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.boolean "read", default: false
   end
 
   create_table "specializations", force: :cascade do |t|

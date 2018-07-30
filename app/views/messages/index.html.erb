@@ -1,0 +1,10 @@
+<% @message.each do |m| %>
+<p>From: <%= User.find(m.sender_id).client ? User.find(m.sender_id).client.name : User.find(m.sender_id).lawyer.name %> </p>
+<p>To: <%= User.find(m.receiver_id).client ? User.find(m.receiver_id).client.name : User.find(m.receiver_id).lawyer.name %> </p>
+<p><%= m.title %></p>
+<p><%= m.content %></p>
+  <% if m.sender_id != current_user.id %>
+    <%= link_to "Reply", "messages/new?receiver_id=#{m.sender_id}", class: "button" %>
+  <% end %>
+<hr>
+<% end %>

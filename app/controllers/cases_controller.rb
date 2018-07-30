@@ -59,7 +59,6 @@ before_action :find_case, only: [ :update, :destroy, :show]
         if user_session["user"] == "lawyer"
             @lawyer = Lawyer.find_by(user_id: current_user.id)
         end
-        
     end
 
 private
