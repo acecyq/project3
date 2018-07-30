@@ -14,7 +14,7 @@ class LawyersController < ApplicationController
     @lawyer = Lawyer.new(lawyer_params)
     @lawyer.user_id = current_user.id
     @lawyer.save
-    redirect_to @lawyer
+    redirect_to cases_path
   end
 
   # shows lawyer profile
