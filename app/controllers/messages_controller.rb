@@ -3,8 +3,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @message = Message.where(["sender_id = ? or receiver_id = ?", current_user.id, current_user.id])
-    # User.where(["name = ? and email = ?", "Joe", "joe@example.com"])
+    @message = Message.where(["sender_id = ? or receiver_id = ?", current_user.id, current_user.id]).order("title DESC")
   end
 
   def new

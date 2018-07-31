@@ -37,9 +37,9 @@
 		        <tbody>
 
 		          <!-- display each case with an index -->
-		          <% @cases.each do |c| %>
+		          <% @cases.each_with_index do |c, i| %>
 		            <tr>
-			          <td><%= c.id + 1 %></td>
+			          <td><%= i + 1 %></td>
 
 								<!-- links to the case show -->
 								<td><%= link_to c.title, case_path(c) %></td>
