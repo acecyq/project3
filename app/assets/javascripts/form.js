@@ -1,3 +1,4 @@
+window.onload = function() {
 let specbutton = document.getElementsByClassName("hide");
 let checkboxes = document.getElementById("checkboxes");
 let hide = document.getElementsByClassName("hide")[0];
@@ -9,4 +10,5 @@ if (specbutton.length === 1) {
 			checkboxes.style.display = "none";
 		}
 	});
+}
 }
