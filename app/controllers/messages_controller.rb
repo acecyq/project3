@@ -7,8 +7,10 @@ class MessagesController < ApplicationController
   end
 
   def new
-     @message = Message.new
-     @receiver_id = params[:receiver_id]
+    @message = Message.new
+    if params[:message_id]
+      @old = Message.find(params[:message_id])
+    end
   end
 
   def create

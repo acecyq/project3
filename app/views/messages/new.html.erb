@@ -23,7 +23,7 @@
                   <div class="field">
                     <%= f.label(:title, "Title") %>
                     <div class="control has-icons-left">
-                      <%= f.text_field :title, class: "input" %>
+                      <%= f.text_field :title, value: @old.title, class: "input" %>
                       <span class="icon"><i class="fas fa-pen-fancy"></i></span>
                     </div>
                   </div>
@@ -36,7 +36,7 @@
                   <div class="field is-hidden">
                     <%= f.label(:receiver_id, "receiver_id") %>
                     <div class="control">
-                      <%= f.text_field :receiver_id, class: "input", :value => @receiver_id %>
+                      <%= f.text_field :receiver_id, class: "input", :value => @old.sender_id %>
                     </div>
                   </div>
 
