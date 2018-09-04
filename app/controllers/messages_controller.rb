@@ -13,15 +13,15 @@ class MessagesController < ApplicationController
     else
       @receive = params[:receiver_id]
     end
-    session[:reply_message] = params[:message_id]
+    cookies[:reply_message] = params[:message_id]
   end
 
   def create
-    Message.find(session[:reply_message]).update(read: false)
+    Message.find(cookies[:reply_message]).update(read: false)
     @message = Message.new(message_params)
     @message.sender_id = current_user.id
     @message.save
-    session[:reply_message] = nil
+    cookies.delete :reply_message
     redirect_to messages_path
   end
 
