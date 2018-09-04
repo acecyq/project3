@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_072913) do
     t.text "content"
     t.integer "sender_id"
     t.integer "receiver_id"
-    t.boolean "read", default: false
+    t.boolean "read", default: true
   end
 
   create_table "specializations", force: :cascade do |t|

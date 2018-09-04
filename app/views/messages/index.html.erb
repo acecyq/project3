@@ -12,8 +12,8 @@
           
             <%= m.content %><hr style="margin: 1rem 0;">
 
-            <% if m.sender_id != current_user.id %>
-              <%= link_to "Reply", "messages/new?message_id=#{m.id}", class: "button is-warning-ish" %> 
+            <% if m.sender_id != current_user.id and m.read == true %>
+              <%= link_to "Reply", "messages/new?message_id=#{m.id}&receiver_id=#{m.receiver_id}", class: "button is-warning-ish" %> 
             <% end %>
 
           </div>
